@@ -9,7 +9,7 @@ namespace Csharp
         T Get(int i);
         T Set(T d, int i);
         void Add(T d);
-        void Remove(int i);
+        T Remove(int i);
 
     }
 }

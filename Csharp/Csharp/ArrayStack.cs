@@ -17,17 +17,29 @@ namespace Csharp
 
         public T Get(int i)
         {
+            if (i >= a.Length)
+            {
+                throw new IndexOutOfRangeException();
+            }
             // validation
             return a[i];
         }
 
-        public void Remove(int i)
+        public T Remove(int i)
         {
+            if (i >= a.Length)
+            {
+                throw new IndexOutOfRangeException();
+            }
             throw new NotImplementedException();
         }
 
         public T Set(T d, int i)
         {
+            if (i >= a.Length)
+            {
+                throw new IndexOutOfRangeException();
+            }
             // validation
             T y = a[i];
             a[i] = d;
