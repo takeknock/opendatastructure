@@ -5,14 +5,25 @@ namespace Csharp
     public class ArrayStack<T> : IMyList<T>
     {
         private Array<T> _a;
+        private int _n;
 
         public ArrayStack(int size) {
             _a = new Array<T>(size);
+            _n = 0;
         }
 
         public void Add(T d, int i)
         {
-            throw new NotImplementedException();
+            if (_n + 1 >= _a.Length)
+            {
+                _a.Resize();
+            }
+            for(int j = i; j < _n; ++j)
+            {
+                _a[j + 1] = _a[j];
+            }
+            _a[i] = d;
+            _n++;
         }
 
         public T Get(int i)
@@ -30,6 +41,7 @@ namespace Csharp
             {
                 throw new IndexOutOfRangeException();
             }
+            _n--;
             throw new NotImplementedException();
         }
 
