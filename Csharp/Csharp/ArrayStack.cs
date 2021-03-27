@@ -4,30 +4,29 @@ namespace Csharp
 {
     public class ArrayStack<T> : IMyList<T>
     {
-        private Array<T> a;
+        private Array<T> _a;
 
         public ArrayStack(int size) {
-            a = new Array<T>(size);
+            _a = new Array<T>(size);
         }
 
-        public void Add(T d)
+        public void Add(T d, int i)
         {
             throw new NotImplementedException();
         }
 
         public T Get(int i)
         {
-            if (i >= a.Length || i < 0)
+            if (i >= _a.Length || i < 0)
             {
                 throw new IndexOutOfRangeException();
             }
-            // validation
-            return a[i];
+            return _a[i];
         }
 
         public T Remove(int i)
         {
-            if (i >= a.Length)
+            if (i >= _a.Length)
             {
                 throw new IndexOutOfRangeException();
             }
@@ -36,13 +35,13 @@ namespace Csharp
 
         public T Set(T d, int i)
         {
-            if (i >= a.Length)
+            if (i >= _a.Length)
             {
                 throw new IndexOutOfRangeException();
             }
             // validation
-            T y = a[i];
-            a[i] = d;
+            T y = _a[i];
+            _a[i] = d;
             return y;
         }
     }
