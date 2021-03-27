@@ -14,6 +14,10 @@ namespace Csharp
 
         public void Add(T d, int i)
         {
+            if (i < 0)
+            {
+                throw new IndexOutOfRangeException();
+            }
             if (_n + 1 >= _a.Length)
             {
                 _a.Resize();
@@ -37,7 +41,7 @@ namespace Csharp
 
         public T Remove(int i)
         {
-            if (i >= _a.Length)
+            if (i >= _a.Length || i < 0)
             {
                 throw new IndexOutOfRangeException();
             }
@@ -47,7 +51,7 @@ namespace Csharp
 
         public T Set(T d, int i)
         {
-            if (i >= _a.Length)
+            if (i >= _a.Length || i < 0)
             {
                 throw new IndexOutOfRangeException();
             }
