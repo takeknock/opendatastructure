@@ -24,13 +24,27 @@ namespace Csharp
                 }
                 return _a[i];
             }
+            set
+            {
+                if (i < 0 || i >= Length)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+                _a[i] = value;
+
+            }
         }
 
-        object ICloneable.Clone()
+        public object Clone()
         {
             Array<T> next = new Array<T>(Length);
             next._a = this._a.Clone() as T[];
             return next;
+        }
+
+        public void Resize()
+        {
+
         }
     }
 }

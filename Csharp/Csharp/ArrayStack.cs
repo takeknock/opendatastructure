@@ -4,10 +4,10 @@ namespace Csharp
 {
     public class ArrayStack<T> : IMyList<T>
     {
-        private T[] a;
+        private Array<T> a;
 
         public ArrayStack(int size) {
-            a = new T[size];
+            a = new Array<T>(size);
         }
 
         public void Add(T d)
