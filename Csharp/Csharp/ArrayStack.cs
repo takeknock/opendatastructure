@@ -17,7 +17,7 @@ namespace Csharp
 
         public T Get(int i)
         {
-            if (i >= a.Length)
+            if (i >= a.Length || i < 0)
             {
                 throw new IndexOutOfRangeException();
             }
